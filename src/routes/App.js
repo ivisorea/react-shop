@@ -25,10 +25,10 @@ export const App = () => {
           <Route path="recovery-password" element={<RecoveryPassword />} />
           <Route path='send-email' element={<SendEmail/>} />
           <Route path='new-password' element={<NewPassword/>} />
-          <Route path="account" element={<MyAccount/>} />
+          <Route path='account' element={<MyAccount/>} />
           <Route path='signup' element={<CreateAccount/>} />
-          <Route path="checkout" element={<Checkout/>} />
-          <Route path="orders" element={<Orders/>} />
+          <Route path='checkout' element={<Checkout/>} />
+          <Route path='orders' element={<Orders/>} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
