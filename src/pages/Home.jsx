@@ -1,9 +1,10 @@
 import React from 'react'
+import { ProductList } from '../containers/ProductList'
 
 export const Home = () => {
   return (
-    <div>
-        <h1>Shop</h1>
-    </div>
+    <>
+      <ProductList />
+    </>
   )
 }
