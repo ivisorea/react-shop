@@ -1,9 +1,12 @@
 import React from 'react'
-
+import '../styles/ProductDetail.scss'
 export const ProductDetail = () => {
   return (
-    <div>
-        <h1>Product Detail</h1>
-    </div>
+    <aside className="ProductDetail">
+        <div className="ProductDetail-close">
+            <img src="./icons/icon_close.png" alt="close" />
+        </div>
+        <ProductInfo />
+    </aside>
   )
 }

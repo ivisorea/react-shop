@@ -1,9 +1,12 @@
 import React from 'react'
+import '../styles/ProductList.scss'
 
 export const ProductList = () => {
   return (
-    <div>
-        <h1>Product List</h1>
-    </div>
+    <section className="main-container">
+        <div className="ProductList">
+            <ProductItem />
+        </div>
+    </section>
   )
 }

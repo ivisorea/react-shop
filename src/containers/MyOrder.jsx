@@ -1,9 +1,25 @@
 import React from 'react'
+import '../styles/MyOrder.scss'
 
 export const MyOrder = () => {
   return (
-    <div>
-        <h1>My Order</h1>
-    </div>
+    <aside className="MyOrder">
+        <div className="title-container">
+            <img src="./icons/flechita.svg" alt="arrow" />
+            <p className="title">My order</p>
+        </div>
+        <div className="my-order-content">
+            <OrderItem />
+            <div className="order">
+                <p>
+                    <span>Total</span>
+                </p>
+                <p>$560.00</p>
+            </div>
+            <button className="primary-button">
+                Checkout
+            </button>
+        </div>
+    </aside>
   )
 }
