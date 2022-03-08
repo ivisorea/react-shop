@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '@styles/Header.scss';
-
+import { Menu } from '@components/Menu';
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
-import shopping_cart from '@icons/icon_shopping_cart.svg';
+import shoppingCart from '@icons/icon_shopping_cart.svg';
 
 export const Header = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleToggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    }
   return (
     <nav>
         <img src={menu} alt="menu" className="menu" />
@@ -35,13 +40,16 @@ export const Header = () => {
         </div>
         <div className="navbar-right">
             <ul>
-                <li className="navbar-email">platzi@example.com</li>
+                <li className="navbar-email" onClick={handleToggleMenu}>
+                    platzi@example.com
+                </li>
                 <li className="navbar-shopping-cart">
-                    <img src={shopping_cart} alt="shopping cart" />
+                    <img src={shoppingCart} alt="shopping cart" />
                     <div>2</div>
                 </li>
             </ul>
         </div>
+        {menuOpen && <Menu />}
     </nav>
   )
 }
