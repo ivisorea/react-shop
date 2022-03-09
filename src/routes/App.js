@@ -1,23 +1,25 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Layout } from '../containers/Layout'
-import { Login } from '../pages/Login'
-// import { Layout } from './containers/Layout'
-// import { Login } from './containers/Login'
-import { RecoveryPassword } from '../pages/RecoveryPassword'
-import { Home } from '../pages/Home'
-import { NotFound } from '../pages/NotFound'
-import '../styles/global.css'
-import { SendEmail } from '../pages/SendEmail'
-import { NewPassword } from '../pages/NewPassword'
-import { MyAccount } from '../pages/MyAccount'
-import { CreateAccount } from '../pages/CreateAccount'
-import { Checkout } from '../pages/Checkout'
-import { Orders } from '../pages/Orders'
+import '@styles/global.css'
+import { Layout } from '@containers/Layout'
+import { Login } from '@pages/Login'
+import { RecoveryPassword } from '@pages/RecoveryPassword'
+import { Home } from '@pages/Home'
+import { NotFound } from '@pages/NotFound'
+import { SendEmail } from '@pages/SendEmail'
+import { NewPassword } from '@pages/NewPassword'
+import { MyAccount } from '@pages/MyAccount'
+import { CreateAccount } from '@pages/CreateAccount'
+import { Checkout } from '@pages/Checkout'
+import { Orders } from '@pages/Orders'
+import AppContext from '@context/AppContext'
+import useInitialState from '@hooks/useInitialState'
 
 export const App = () => {
+  const initialState = useInitialState();
   return (
     <>
+      <AppContext.Provider  value={initialState}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -32,6 +34,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      </AppContext.Provider>
     </>
     
   )
