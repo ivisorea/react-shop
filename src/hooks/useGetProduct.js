@@ -5,16 +5,20 @@ export const useGetProduct = (API) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
   
-    useEffect(async() => {
-        try {
-            const { data } = await axios.get(API);
-            setProducts(data);
-            setLoading(false);
-        } catch (error) {
+    useEffect(() => {
+        try{
+            const fetchData = async () => {
+                const result = await axios(API);
+                setProducts(result.data);
+                setLoading(false);
+            };
+            fetchData();
+        } catch(error){
             console.log(error);
         }
-      
     }, [API]);
+
+    
    
     return { products, loading };
 };
